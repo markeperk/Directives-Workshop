@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="directiveWorkshop">
+<link rel="stylesheet" href="style.css" />
 <head>
 	<title>My Directives</title>
 </head>
+
+
 <body ng-controller="mainCtrl">
 
+
 <div>
-<h2>pending</h2>
+<h2>Pending</h2>
 	<form>
 		<input ng-model="query" placeholder="Search"/>
-		<button ng-click="getData()">Submit</button> 
+		<pending class="btn btn-primary" request="getData()"></pending> 
 	</form>
 </div>
 
@@ -19,17 +23,20 @@
 		<input ng-model="title" placeholder="title"/>
 		<input ng-model="body" placeholder="body"/>
 		<input ng-model="icon" placeholder="iconUrl"/>
-		<button ng-click="">Submit</button> 
+		<button notify-box title="title" body="body" icon="icon" />Submit</button> 
 	</form>
 </div>
 
+{{data.data.results}}
 <scripts>
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript" src="mainCtrl.js"></script>
 	<script type="text/javascript" src="mainService.js"></script>
 	<script type="text/javascript" src="myDirectives.js"></script>
+	<script type="text/javascript" src="notifDirective.js"></script>
 </scripts>
 
 </body>
 </html>
+

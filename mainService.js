@@ -1,4 +1,4 @@
-var app = angular.module('directiveWorkshop');
+   var app = angular.module('directiveWorkshop');
 
 app.service('mainService', function($http){
 	this.getData = function(artist) {

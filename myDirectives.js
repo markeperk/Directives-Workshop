@@ -28,3 +28,40 @@ app.directive('pending', function()  {
 	};
 });
 		
+// Jess's solution
+/*
+app.directive('pending', function($q)  {
+	return {
+		restrict: 'AE',
+		scope: {
+			request: '&'
+		},
+		link: function(scope, elem, attrs) {
+			var spinnerIcon = angular.element('span class = "fa fa-spin"></span');
+			spinnerIcon.hide();
+			elem.after(spinnerIcon);
+
+			var invokeRequest = function() {
+				var dfd = $q.defer();
+
+				dfd.resolve(scope.request());
+
+				return deferred.promise;
+			}
+
+			elem.on('click', function() {
+				elem.hide();
+				spinnerIcon.show();
+				invokeRequest().then(function() {
+					setTimeout(function() {
+						elem.show();
+						spinnerIcon.hide();
+					}, 3000);
+				})
+			})
+		}
+
+
+*/
+
+

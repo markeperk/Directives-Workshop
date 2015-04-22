@@ -5,14 +5,8 @@ app.directive('pending', function()  {
 	return {
 		restrict: 'AE',
 		scope: {
-			request: '&'
+			request: '&'  //allows the directive's isolate scope to pass values into the parent scope for evaluation in the expression defined in the attribute. 
 		},
-		// controller: function ($scope, $q, mainService){
-		// 	$scope.clickEvent = function(){
-		// 		$scope.request();
-		// 	}
-
-		//  },
 		template: "<button ng-show='!spinner'>Submit</button><img ng-show='spinner' src='http://www.nasa.gov/multimedia/videogallery/ajax-loader.gif' style='width: 25px; height: 25px'>",
 		link: function (scope, element, attrs) {
 	
@@ -27,7 +21,9 @@ app.directive('pending', function()  {
 		}
 	};
 });
-		
+
+//Use an element when you are creating a component that is in control of the template. The common case for this is when you are creating a Domain-Specific Language for parts of your template. Use an attribute when you are decorating an existing element with new functionality.		
+
 // Jess's solution
 /*
 app.directive('pending', function($q)  {
